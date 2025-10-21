@@ -1,14 +1,18 @@
 
-# Well, were' back in Ruby
+# Practicing Ruby by developing a prototype of Super Mario Bros
+# Using concepts from the book Advanced Game Design by Michael Sellers
 
-# Preparing to hopefully get my job back
+# Some useful concepts from the book:
+# Tokens - All the objects in the game
+# Rules - The laws that govern how Tokens interact
+# Reinforcement loops - Rules that add to a system's behavior, usually in favor of the player
+      # As players collect more coins, they can earn extra lives, allowing them to play longer and collect even more coins
+# Balancing loops - Rules that keep a system in check, usually against the player
+      # The longer a player plays, the more difficult the enemies become, making it harder to progress
+      # The timer counts down, adding pressure to complete the level quickly
 
-#  Let's do a refresher on Ruby syntax
-# And also test out the book Advanced Game Design
-# By practicing Tokens and Rules
 
-
-
+require_relative 'tokens/Mario'
 puts "something"
 #Tokens
 '''
@@ -81,41 +85,7 @@ Specific examples of Rules in Super Mario Bros include:
 
 puts "that's right"
 # let's create the tokens and rules!
-class Mario
-  attr_accessor :position, :state, :lives, :score
 
-  def initialize
-    @position = [0, 0]
-    @state = :small
-    @lives = 3
-    @score = 0
-  end
-
-  def jump
-    puts "Mario jumps!"
-  end
-
-  def collect_coin
-    @score += 1
-    puts "Coin collected! Score: #{@score}"
-  end
-
-  def power_up(item)
-    case item
-    when :mushroom
-      @state = :big
-      puts "Mario powered up to Big Mario!"
-    when :fire_flower
-      @state = :fire
-      puts "Mario powered up to Fire Mario!"
-    end
-  end
-
-  def lose_life
-    @lives -= 1
-    puts "Mario lost a life! Lives left: #{@lives}"
-  end
-end
 
 # Example usage
 mario = Mario.new
